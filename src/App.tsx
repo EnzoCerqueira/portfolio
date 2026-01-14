@@ -8,19 +8,18 @@ function App() {
     <>
       <div className="main-container">
         <div className="text-section">
-          <h1>Welcome</h1>
+          <h1>Boas-vindas</h1>
           <p>
-            Meu nome é Enzo, um desenvolvedor front-end, atualmente moro em
-            Brumado-BA, Brasil. <br></br> Trabalhei em alguns projetos front-end
-            utilizando de JavaScript puro até React com TypeScript,<br></br> com
-            foco na criação de interfaces intuitivas e responsivas que
-            satisfazem a experiência do usuário.
+            Olá! Meu nome é Enzo, um desenvolvedor front-end apaixonado por
+            tecnologia, atualmente moro em Brumado-BA. Tenho experiência na
+            construção de aplicações web, desde o JavaScript Puro até
+            arquiteturas modernas com React e TypeScript. Meu foco é desenvolver
+            interfaces responsivas e intuitivas, garantindo uma ótima
+            experiência para o usuário.
           </p>
         </div>
         <div className="logo-section">
-          <a href="https://react.dev" target="_blank">
-            <img src={Logo} className="logo " alt="React logo" />
-          </a>
+          <img src={Logo} className="logo " alt="Logo Portfólio" />
         </div>
       </div>
       <div className="projects-section">

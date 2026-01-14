@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #0a001b;
 
@@ -13,109 +13,119 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: row; /* Alinha os itens em linha (um do lado do outro) */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: space-between; /* Joga um para cada ponta */
-  width: 100%;
-  max-width: 1200px; /* Limita a largura para não ficar colado nas bordas */
-  margin: 0 auto; /* Centraliza o container na tela */
-  padding: 2rem;
-  gap: 40px; /* Espaço entre o texto e a logo */
-}
+body {
+  margin: 0;
 
-/* Caixa dos textos */
-.text-section {
   display: flex;
-  flex-direction: column; /* Faz o H1 ficar em cima do P */
-  text-align: left; /* Garante que o texto comece na esquerda */
-  flex: 1; /* Faz o texto ocupar o espaço disponível */
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 a {
   font-weight: 500;
   text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  transition: color 0.3s;
 }
 
-body {
-  margin: 0;
+a:hover {
+  color: #9a03ff;
+}
+
+.main-container {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  gap: 40px;
+  box-sizing: border-box;
+}
+
+.text-section {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
 }
 
 h1 {
   font-size: 4.2em;
   line-height: 1.1;
+  margin-bottom: 0.5rem;
 }
 
 h1:hover {
   filter: drop-shadow(0 0 60px #9a03ffaa);
 }
 
-/* --- ESTILO DOS PROJETOS --- */
+.logo-section img {
+  max-width: 100%;
+  height: auto;
+  min-width: 200px;
+}
 
 .projects-section {
   width: 100%;
   max-width: 1200px;
-  margin: 4rem auto 0; /* Espaço acima da seção */
+  margin: 2rem auto 4rem;
   padding: 0 2rem;
   box-sizing: border-box;
 }
 
-.projects-section h2 {
-  font-size: 2.5em;
+.projects-title {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #fff; /* Garante branco */
+  margin-bottom: 3rem;
 }
 
-/* O GRID */
+.projects-section h2 {
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-/* O CARTÃO (Estilo Dark Glass) */
 .project-card {
   background-color: #160d2b;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  /* Remova o padding geral do card para a imagem encostar nas bordas */
   padding: 0;
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Garante que a imagem respeite as bordas arredondadas */
+  overflow: hidden;
+  height: 100%;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: #9a03ff; /* Roxo neon na borda ao passar o mouse */
-  box-shadow: 0 10px 30px -10px rgba(154, 3, 255, 0.3); /* Brilho roxo */
+  border-color: #9a03ff;
+  box-shadow: 0 10px 30px -10px rgba(154, 3, 255, 0.3);
 }
 
 .card-image-container {
   width: 100%;
-  height: 180px; /* Defina uma altura fixa para todas ficarem iguais */
-  background-color: #000; /* Fundo caso a imagem não carregue */
+  height: 180px;
+  background-color: #000;
 }
 
 .card-image-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Corta a imagem para preencher o espaço sem esticar */
+  object-fit: cover;
   display: block;
 }
 
-/* Conteúdo (Texto, ícones) */
-/* Como removemos o padding do card principal, colocamos aqui */
 .card-content {
   padding: 1.5rem;
   display: flex;
@@ -123,17 +133,16 @@ h1:hover {
   flex-grow: 1;
 }
 
-/* Cabeçalho do Card (Ícones) */
 .card-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .folder-icon {
   font-size: 2rem;
-  color: #9a03ff; /* Cor de destaque */
+  color: #9a03ff;
 }
 
 .project-links {
@@ -151,7 +160,6 @@ h1:hover {
   color: #9a03ff;
 }
 
-/* Textos do Card */
 .project-card h3 {
   margin: 0 0 10px;
   font-size: 1.5rem;
@@ -159,32 +167,45 @@ h1:hover {
 }
 
 .project-card p {
-  color: #8892b0; /* Cinza azulado para texto secundário */
+  color: #8892b0;
   font-size: 1rem;
   line-height: 1.6;
-  flex-grow: 1; /* Empurra as tags para baixo */
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
 }
 
-/* Tags (tecnologias usadas) */
 .card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: auto;
   font-size: 0.85rem;
-  font-family: monospace; /* Fonte estilo código */
+  font-family: monospace;
   color: #9a03ff;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 30px;
   }
-  a:hover {
-    color: #747bff;
+
+  .text-section {
+    align-items: center;
+    text-align: center;
   }
-  button {
-    background-color: #f9f9f9;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .projects-section {
+    padding: 0 1.5rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
